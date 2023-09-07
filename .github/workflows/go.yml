@@ -23,15 +23,14 @@ jobs:
 
     - name: Build
       run: |
-        go build -o ./gtest
+        go build -o ./build/gtest
         ls
 
-    - name: Upload to Release Action
-      # You may pin to the exact commit or the version.
-      # uses: Shopify/upload-to-release@9942a4c936dab172f7101dcc7dc20528ea949102
-      uses: Shopify/upload-to-release@v1.0.1
-      with:
-        name: gtest1
-        path: ./gtest
-        repo-token: ${{secrets.GITHUB_TOKEN}}
+    uses: xresloader/upload-to-github-release@v1.3.12
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      file: "./build/gtest"
+      tags: true
+      draft: true
 
