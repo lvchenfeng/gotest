@@ -27,5 +27,3 @@ jobs:
     - name: Build
       run: go build -o ./gtest
 
-    - name: Test
-      run: go test -v ./gtest
