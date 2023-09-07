@@ -26,11 +26,12 @@ jobs:
         go build -o ./build/gtest
         ls
 
-    uses: xresloader/upload-to-github-release@v1.3.12
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      file: "./build/gtest"
-      tags: true
-      draft: true
+    - name: Upload
+      uses: xresloader/upload-to-github-release@v1.3.12
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        file: "./build/gtest"
+        tags: true
+        draft: true
 
