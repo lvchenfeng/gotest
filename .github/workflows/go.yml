@@ -29,6 +29,7 @@ jobs:
       # uses: Shopify/upload-to-release@9942a4c936dab172f7101dcc7dc20528ea949102
       uses: Shopify/upload-to-release@v1.0.1
       with:
+        id: Upload_to_Release_Action
         # Artifact name
         name: gtest1
         # Path to the file to upload
